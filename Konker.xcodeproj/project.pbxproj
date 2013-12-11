@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7AD9FF518588B4800EDC222 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD9FF418588B4800EDC222 /* Foundation.framework */; };
+		C7AD9FF718588B4800EDC222 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD9FF618588B4800EDC222 /* CoreGraphics.framework */; };
+		C7AD9FF918588B4800EDC222 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD9FF818588B4800EDC222 /* UIKit.framework */; };
+		C7AD9FFF18588B4800EDC222 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7AD9FFD18588B4800EDC222 /* InfoPlist.strings */; };
+		C7ADA00118588B4800EDC222 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ADA00018588B4800EDC222 /* main.m */; };
+		C7ADA00518588B4800EDC222 /* TTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ADA00418588B4800EDC222 /* TTAppDelegate.m */; };
+		C7ADA00818588B4800EDC222 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7ADA00618588B4800EDC222 /* Main_iPhone.storyboard */; };
+		C7ADA00B18588B4800EDC222 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7ADA00918588B4800EDC222 /* Main_iPad.storyboard */; };
+		C7ADA00E18588B4800EDC222 /* TTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ADA00D18588B4800EDC222 /* TTViewController.m */; };
+		C7ADA01018588B4800EDC222 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7ADA00F18588B4800EDC222 /* Images.xcassets */; };
+		C7ADA01718588B4800EDC222 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7ADA01618588B4800EDC222 /* XCTest.framework */; };
+		C7ADA01818588B4800EDC222 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD9FF418588B4800EDC222 /* Foundation.framework */; };
+		C7ADA01918588B4800EDC222 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD9FF818588B4800EDC222 /* UIKit.framework */; };
+		C7ADA02118588B4800EDC222 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7ADA01F18588B4800EDC222 /* InfoPlist.strings */; };
+		C7ADA02318588B4800EDC222 /* KonkerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ADA02218588B4800EDC222 /* KonkerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C7ADA01A18588B4800EDC222 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7AD9FE918588B4800EDC222 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7AD9FF018588B4800EDC222;
+			remoteInfo = Konker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C7AD9FF118588B4800EDC222 /* Konker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Konker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7AD9FF418588B4800EDC222 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C7AD9FF618588B4800EDC222 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C7AD9FF818588B4800EDC222 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C7AD9FFC18588B4800EDC222 /* Konker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Konker-Info.plist"; sourceTree = "<group>"; };
+		C7AD9FFE18588B4800EDC222 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C7ADA00018588B4800EDC222 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7ADA00218588B4800EDC222 /* Konker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Konker-Prefix.pch"; sourceTree = "<group>"; };
+		C7ADA00318588B4800EDC222 /* TTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAppDelegate.h; sourceTree = "<group>"; };
+		C7ADA00418588B4800EDC222 /* TTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
+		C7ADA00718588B4800EDC222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		C7ADA00A18588B4800EDC222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		C7ADA00C18588B4800EDC222 /* TTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTViewController.h; sourceTree = "<group>"; };
+		C7ADA00D18588B4800EDC222 /* TTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTViewController.m; sourceTree = "<group>"; };
+		C7ADA00F18588B4800EDC222 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C7ADA01518588B4800EDC222 /* KonkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KonkerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7ADA01618588B4800EDC222 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C7ADA01E18588B4800EDC222 /* KonkerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KonkerTests-Info.plist"; sourceTree = "<group>"; };
+		C7ADA02018588B4800EDC222 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C7ADA02218588B4800EDC222 /* KonkerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KonkerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7AD9FEE18588B4800EDC222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7AD9FF718588B4800EDC222 /* CoreGraphics.framework in Frameworks */,
+				C7AD9FF918588B4800EDC222 /* UIKit.framework in Frameworks */,
+				C7AD9FF518588B4800EDC222 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7ADA01218588B4800EDC222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7ADA01718588B4800EDC222 /* XCTest.framework in Frameworks */,
+				C7ADA01918588B4800EDC222 /* UIKit.framework in Frameworks */,
+				C7ADA01818588B4800EDC222 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7AD9FE818588B4800EDC222 = {
+			isa = PBXGroup;
+			children = (
+				C7AD9FFA18588B4800EDC222 /* Konker */,
+				C7ADA01C18588B4800EDC222 /* KonkerTests */,
+				C7AD9FF318588B4800EDC222 /* Frameworks */,
+				C7AD9FF218588B4800EDC222 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7AD9FF218588B4800EDC222 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7AD9FF118588B4800EDC222 /* Konker.app */,
+				C7ADA01518588B4800EDC222 /* KonkerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7AD9FF318588B4800EDC222 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7AD9FF418588B4800EDC222 /* Foundation.framework */,
+				C7AD9FF618588B4800EDC222 /* CoreGraphics.framework */,
+				C7AD9FF818588B4800EDC222 /* UIKit.framework */,
+				C7ADA01618588B4800EDC222 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7AD9FFA18588B4800EDC222 /* Konker */ = {
+			isa = PBXGroup;
+			children = (
+				C7ADA00318588B4800EDC222 /* TTAppDelegate.h */,
+				C7ADA00418588B4800EDC222 /* TTAppDelegate.m */,
+				C7ADA00618588B4800EDC222 /* Main_iPhone.storyboard */,
+				C7ADA00918588B4800EDC222 /* Main_iPad.storyboard */,
+				C7ADA00C18588B4800EDC222 /* TTViewController.h */,
+				C7ADA00D18588B4800EDC222 /* TTViewController.m */,
+				C7ADA00F18588B4800EDC222 /* Images.xcassets */,
+				C7AD9FFB18588B4800EDC222 /* Supporting Files */,
+			);
+			path = Konker;
+			sourceTree = "<group>";
+		};
+		C7AD9FFB18588B4800EDC222 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7AD9FFC18588B4800EDC222 /* Konker-Info.plist */,
+				C7AD9FFD18588B4800EDC222 /* InfoPlist.strings */,
+				C7ADA00018588B4800EDC222 /* main.m */,
+				C7ADA00218588B4800EDC222 /* Konker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7ADA01C18588B4800EDC222 /* KonkerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C7ADA02218588B4800EDC222 /* KonkerTests.m */,
+				C7ADA01D18588B4800EDC222 /* Supporting Files */,
+			);
+			path = KonkerTests;
+			sourceTree = "<group>";
+		};
+		C7ADA01D18588B4800EDC222 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7ADA01E18588B4800EDC222 /* KonkerTests-Info.plist */,
+				C7ADA01F18588B4800EDC222 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7AD9FF018588B4800EDC222 /* Konker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7ADA02618588B4800EDC222 /* Build configuration list for PBXNativeTarget "Konker" */;
+			buildPhases = (
+				C7AD9FED18588B4800EDC222 /* Sources */,
+				C7AD9FEE18588B4800EDC222 /* Frameworks */,
+				C7AD9FEF18588B4800EDC222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Konker;
+			productName = Konker;
+			productReference = C7AD9FF118588B4800EDC222 /* Konker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C7ADA01418588B4800EDC222 /* KonkerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7ADA02918588B4800EDC222 /* Build configuration list for PBXNativeTarget "KonkerTests" */;
+			buildPhases = (
+				C7ADA01118588B4800EDC222 /* Sources */,
+				C7ADA01218588B4800EDC222 /* Frameworks */,
+				C7ADA01318588B4800EDC222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7ADA01B18588B4800EDC222 /* PBXTargetDependency */,
+			);
+			name = KonkerTests;
+			productName = KonkerTests;
+			productReference = C7ADA01518588B4800EDC222 /* KonkerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7AD9FE918588B4800EDC222 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TT;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = wan;
+				TargetAttributes = {
+					C7ADA01418588B4800EDC222 = {
+						TestTargetID = C7AD9FF018588B4800EDC222;
+					};
+				};
+			};
+			buildConfigurationList = C7AD9FEC18588B4800EDC222 /* Build configuration list for PBXProject "Konker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C7AD9FE818588B4800EDC222;
+			productRefGroup = C7AD9FF218588B4800EDC222 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7AD9FF018588B4800EDC222 /* Konker */,
+				C7ADA01418588B4800EDC222 /* KonkerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7AD9FEF18588B4800EDC222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7ADA00B18588B4800EDC222 /* Main_iPad.storyboard in Resources */,
+				C7ADA01018588B4800EDC222 /* Images.xcassets in Resources */,
+				C7ADA00818588B4800EDC222 /* Main_iPhone.storyboard in Resources */,
+				C7AD9FFF18588B4800EDC222 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7ADA01318588B4800EDC222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7ADA02118588B4800EDC222 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7AD9FED18588B4800EDC222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7ADA00518588B4800EDC222 /* TTAppDelegate.m in Sources */,
+				C7ADA00118588B4800EDC222 /* main.m in Sources */,
+				C7ADA00E18588B4800EDC222 /* TTViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7ADA01118588B4800EDC222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7ADA02318588B4800EDC222 /* KonkerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C7ADA01B18588B4800EDC222 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7AD9FF018588B4800EDC222 /* Konker */;
+			targetProxy = C7ADA01A18588B4800EDC222 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C7AD9FFD18588B4800EDC222 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7AD9FFE18588B4800EDC222 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C7ADA00618588B4800EDC222 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7ADA00718588B4800EDC222 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C7ADA00918588B4800EDC222 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7ADA00A18588B4800EDC222 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		C7ADA01F18588B4800EDC222 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7ADA02018588B4800EDC222 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7ADA02418588B4800EDC222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7ADA02518588B4800EDC222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7ADA02718588B4800EDC222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Konker/Konker-Prefix.pch";
+				INFOPLIST_FILE = "Konker/Konker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C7ADA02818588B4800EDC222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Konker/Konker-Prefix.pch";
+				INFOPLIST_FILE = "Konker/Konker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C7ADA02A18588B4800EDC222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Konker.app/Konker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Konker/Konker-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "KonkerTests/KonkerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C7ADA02B18588B4800EDC222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Konker.app/Konker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Konker/Konker-Prefix.pch";
+				INFOPLIST_FILE = "KonkerTests/KonkerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7AD9FEC18588B4800EDC222 /* Build configuration list for PBXProject "Konker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7ADA02418588B4800EDC222 /* Debug */,
+				C7ADA02518588B4800EDC222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7ADA02618588B4800EDC222 /* Build configuration list for PBXNativeTarget "Konker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7ADA02718588B4800EDC222 /* Debug */,
+				C7ADA02818588B4800EDC222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C7ADA02918588B4800EDC222 /* Build configuration list for PBXNativeTarget "KonkerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7ADA02A18588B4800EDC222 /* Debug */,
+				C7ADA02B18588B4800EDC222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7AD9FE918588B4800EDC222 /* Project object */;
+}
