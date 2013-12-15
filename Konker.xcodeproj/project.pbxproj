@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7A67FEE185D4AD90039065E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A67FED185D4AD90039065E /* QuartzCore.framework */; };
+		C7A68807185C85150062D0CB /* TTCoordinateAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A68806185C85150062D0CB /* TTCoordinateAttribute.m */; };
+		C7A6880C185C882E0062D0CB /* TTPieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A6880B185C882E0062D0CB /* TTPieceView.m */; };
+		C7A6880F185C89BC0062D0CB /* CGPoint+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A6880E185C89BC0062D0CB /* CGPoint+Helper.m */; };
+		C7A6BC91185C80D200CE4AC3 /* TTBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A6BC90185C80D200CE4AC3 /* TTBoard.m */; };
 		C7AD9FF518588B4800EDC222 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD9FF418588B4800EDC222 /* Foundation.framework */; };
 		C7AD9FF718588B4800EDC222 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD9FF618588B4800EDC222 /* CoreGraphics.framework */; };
 		C7AD9FF918588B4800EDC222 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD9FF818588B4800EDC222 /* UIKit.framework */; };
@@ -22,6 +27,8 @@
 		C7ADA01918588B4800EDC222 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD9FF818588B4800EDC222 /* UIKit.framework */; };
 		C7ADA02118588B4800EDC222 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7ADA01F18588B4800EDC222 /* InfoPlist.strings */; };
 		C7ADA02318588B4800EDC222 /* KonkerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ADA02218588B4800EDC222 /* KonkerTests.m */; };
+		C7ADA02E18588CF800EDC222 /* TTBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ADA02D18588CF800EDC222 /* TTBoardViewController.m */; };
+		C7ADA03118588D4F00EDC222 /* TTBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ADA03018588D4F00EDC222 /* TTBoardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C7A67FED185D4AD90039065E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C7A68805185C85150062D0CB /* TTCoordinateAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTCoordinateAttribute.h; path = Object/TTCoordinateAttribute.h; sourceTree = "<group>"; };
+		C7A68806185C85150062D0CB /* TTCoordinateAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTCoordinateAttribute.m; path = Object/TTCoordinateAttribute.m; sourceTree = "<group>"; };
+		C7A6880A185C882E0062D0CB /* TTPieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTPieceView.h; path = View/TTPieceView.h; sourceTree = "<group>"; };
+		C7A6880B185C882E0062D0CB /* TTPieceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTPieceView.m; path = View/TTPieceView.m; sourceTree = "<group>"; };
+		C7A6880D185C89BC0062D0CB /* CGPoint+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGPoint+Helper.h"; sourceTree = "<group>"; };
+		C7A6880E185C89BC0062D0CB /* CGPoint+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGPoint+Helper.m"; sourceTree = "<group>"; };
+		C7A6BC8F185C80D200CE4AC3 /* TTBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBoard.h; path = Object/TTBoard.h; sourceTree = "<group>"; };
+		C7A6BC90185C80D200CE4AC3 /* TTBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTBoard.m; path = Object/TTBoard.m; sourceTree = "<group>"; };
 		C7AD9FF118588B4800EDC222 /* Konker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Konker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7AD9FF418588B4800EDC222 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C7AD9FF618588B4800EDC222 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +71,10 @@
 		C7ADA01E18588B4800EDC222 /* KonkerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KonkerTests-Info.plist"; sourceTree = "<group>"; };
 		C7ADA02018588B4800EDC222 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C7ADA02218588B4800EDC222 /* KonkerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KonkerTests.m; sourceTree = "<group>"; };
+		C7ADA02C18588CF800EDC222 /* TTBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTBoardViewController.h; sourceTree = "<group>"; };
+		C7ADA02D18588CF800EDC222 /* TTBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTBoardViewController.m; sourceTree = "<group>"; };
+		C7ADA02F18588D4F00EDC222 /* TTBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTBoardView.h; sourceTree = "<group>"; };
+		C7ADA03018588D4F00EDC222 /* TTBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTBoardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7A67FEE185D4AD90039065E /* QuartzCore.framework in Frameworks */,
 				C7AD9FF718588B4800EDC222 /* CoreGraphics.framework in Frameworks */,
 				C7AD9FF918588B4800EDC222 /* UIKit.framework in Frameworks */,
 				C7AD9FF518588B4800EDC222 /* Foundation.framework in Frameworks */,
@@ -81,6 +102,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7A68808185C851D0062D0CB /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				C7A6BC8F185C80D200CE4AC3 /* TTBoard.h */,
+				C7A6BC90185C80D200CE4AC3 /* TTBoard.m */,
+				C7A68805185C85150062D0CB /* TTCoordinateAttribute.h */,
+				C7A68806185C85150062D0CB /* TTCoordinateAttribute.m */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		C7A68809185C881A0062D0CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7ADA02F18588D4F00EDC222 /* TTBoardView.h */,
+				C7ADA03018588D4F00EDC222 /* TTBoardView.m */,
+				C7A6880A185C882E0062D0CB /* TTPieceView.h */,
+				C7A6880B185C882E0062D0CB /* TTPieceView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C7A68810185C8B060062D0CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C7ADA00C18588B4800EDC222 /* TTViewController.h */,
+				C7ADA00D18588B4800EDC222 /* TTViewController.m */,
+				C7ADA02C18588CF800EDC222 /* TTBoardViewController.h */,
+				C7ADA02D18588CF800EDC222 /* TTBoardViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		C7AD9FE818588B4800EDC222 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +157,7 @@
 		C7AD9FF318588B4800EDC222 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7A67FED185D4AD90039065E /* QuartzCore.framework */,
 				C7AD9FF418588B4800EDC222 /* Foundation.framework */,
 				C7AD9FF618588B4800EDC222 /* CoreGraphics.framework */,
 				C7AD9FF818588B4800EDC222 /* UIKit.framework */,
@@ -118,9 +173,11 @@
 				C7ADA00418588B4800EDC222 /* TTAppDelegate.m */,
 				C7ADA00618588B4800EDC222 /* Main_iPhone.storyboard */,
 				C7ADA00918588B4800EDC222 /* Main_iPad.storyboard */,
-				C7ADA00C18588B4800EDC222 /* TTViewController.h */,
-				C7ADA00D18588B4800EDC222 /* TTViewController.m */,
-				C7ADA00F18588B4800EDC222 /* Images.xcassets */,
+				C7A68810185C8B060062D0CB /* Controller */,
+				C7A68809185C881A0062D0CB /* View */,
+				C7A68808185C851D0062D0CB /* Object */,
+				C7A6880D185C89BC0062D0CB /* CGPoint+Helper.h */,
+				C7A6880E185C89BC0062D0CB /* CGPoint+Helper.m */,
 				C7AD9FFB18588B4800EDC222 /* Supporting Files */,
 			);
 			path = Konker;
@@ -129,6 +186,7 @@
 		C7AD9FFB18588B4800EDC222 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7ADA00F18588B4800EDC222 /* Images.xcassets */,
 				C7AD9FFC18588B4800EDC222 /* Konker-Info.plist */,
 				C7AD9FFD18588B4800EDC222 /* InfoPlist.strings */,
 				C7ADA00018588B4800EDC222 /* main.m */,
@@ -255,7 +313,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7ADA00518588B4800EDC222 /* TTAppDelegate.m in Sources */,
+				C7A6880C185C882E0062D0CB /* TTPieceView.m in Sources */,
+				C7ADA02E18588CF800EDC222 /* TTBoardViewController.m in Sources */,
+				C7ADA03118588D4F00EDC222 /* TTBoardView.m in Sources */,
 				C7ADA00118588B4800EDC222 /* main.m in Sources */,
+				C7A6880F185C89BC0062D0CB /* CGPoint+Helper.m in Sources */,
+				C7A6BC91185C80D200CE4AC3 /* TTBoard.m in Sources */,
+				C7A68807185C85150062D0CB /* TTCoordinateAttribute.m in Sources */,
 				C7ADA00E18588B4800EDC222 /* TTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +460,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Konker/Konker-Prefix.pch";
 				INFOPLIST_FILE = "Konker/Konker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -409,6 +474,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Konker/Konker-Prefix.pch";
 				INFOPLIST_FILE = "Konker/Konker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -475,6 +541,7 @@
 				C7ADA02818588B4800EDC222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7ADA02918588B4800EDC222 /* Build configuration list for PBXNativeTarget "KonkerTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +550,7 @@
 				C7ADA02B18588B4800EDC222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
