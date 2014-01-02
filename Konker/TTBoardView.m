@@ -20,12 +20,12 @@
 
 @implementation TTBoardView{
     CGFloat _upperMargin;
-
+    NSMutableArray *_shownTestPoints;
 }
 
-CGFloat CGPointDistance(CGPoint a, CGPoint b) {
-    return sqrtf((a.x-b.x)*(a.x-b.x) + (a.y-b.y)*(a.y-b.y));
-}
+//CGFloat CGPointDistance(CGPoint a, CGPoint b) {
+//    return sqrtf((a.x-b.x)*(a.x-b.x) + (a.y-b.y)*(a.y-b.y));
+//}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -281,6 +281,33 @@ CGFloat CGPointDistance(CGPoint a, CGPoint b) {
     CGPoint touchCoord = [self nearestBoardCoordinateForPoint:location];
     [self.delegate boardView:self didEndTouchAtCoordinate:touchCoord]; //call delegate to add new piece
 
+}
+
+#pragma mark - Testing
+
+- (void)showTestCoordinates:(NSArray*)coordinates duration:(NSTimeInterval)duration{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    
+    __weak TTBoardView *weakSelf = self;
+    
+    [coordinates enumerateObjectsUsingBlock:^(NSString* coordinateString, NSUInteger idx, BOOL *stop) {
+        //        NSLog(@"%@", coordinateString);
+        CGPoint pointInView = [self viewPointForCoordinate:CGPointFromString(coordinateString)];
+        CALayer *layer = [CALayer layer];
+        layer.frame = CGRectMake(0, 0, 10, 10);
+        layer.backgroundColor = [UIColor blackColor].CGColor;
+        layer.position = pointInView;
+        layer.name = @"testLayer";
+        [weakSelf.layer addSublayer:layer];
+        
+    }];
+    
+    [self performSelector:@selector(removeTestLayers) withObject:nil afterDelay:duration];
+}
+
+- (void)removeTestLayers{
+    NSArray *testLayers = [self.layer sublayersNamed:@"testLayer"];
+    [testLayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
 }
 
 

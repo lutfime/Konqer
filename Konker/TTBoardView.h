@@ -24,6 +24,9 @@
 
 //!Connect lines from given coordinate for player. The object in coordinates is in string format
 - (void)connectLinesForCoordinates:(NSArray*)coordinates forPlayer:(NSInteger)playerIdx;
+
+//!testing
+- (void)showTestCoordinates:(NSArray*)coordinates duration:(NSTimeInterval)duration;
 @end
 
 @protocol TTBoardViewDelegate <NSObject>

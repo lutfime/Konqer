@@ -27,6 +27,8 @@ typedef enum
  */
 - (void)player:(TTPlayer)player piecesThatBecomeKonqerer:(NSArray*)coordinates;
 
+- (void)player:(TTPlayer)player testPieces:(NSArray*)coordinates;
+
 @end
 
 @interface TTBoard : NSObject

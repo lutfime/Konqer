@@ -118,3 +118,9 @@ CGPoint WLPointForRectAndAttributeWithFactor(CGRect aRect, RectAttribute attr, C
     }
     return edgePoint;
 }
+
+CGFloat CGPointDistance(CGPoint point1, CGPoint point2) {
+    CGFloat dx = point1.x - point2.x;
+    CGFloat dy = point1.y - point2.y;
+    return (CGFloat) sqrt(dx*dx + dy*dy);
+}

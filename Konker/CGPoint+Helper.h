@@ -31,3 +31,4 @@ typedef enum _RectAttribute
 }RectAttribute;
 
 CGPoint WLPointForRectAndAttributeWithFactor(CGRect aRect, RectAttribute attr, CGPoint factor);
+CGFloat CGPointDistance(CGPoint point1, CGPoint point2);

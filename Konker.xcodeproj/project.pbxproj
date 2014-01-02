@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7A652951875A74700D59413 /* CALayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A652941875A74700D59413 /* CALayer+Extension.m */; };
 		C7A67FEE185D4AD90039065E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A67FED185D4AD90039065E /* QuartzCore.framework */; };
 		C7A68807185C85150062D0CB /* TTCoordinateAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A68806185C85150062D0CB /* TTCoordinateAttribute.m */; };
 		C7A6880C185C882E0062D0CB /* TTPieceView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A6880B185C882E0062D0CB /* TTPieceView.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C7A652931875A74700D59413 /* CALayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Extension.h"; sourceTree = "<group>"; };
+		C7A652941875A74700D59413 /* CALayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Extension.m"; sourceTree = "<group>"; };
 		C7A67FED185D4AD90039065E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C7A68805185C85150062D0CB /* TTCoordinateAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTCoordinateAttribute.h; path = Object/TTCoordinateAttribute.h; sourceTree = "<group>"; };
 		C7A68806185C85150062D0CB /* TTCoordinateAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTCoordinateAttribute.m; path = Object/TTCoordinateAttribute.m; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				C7A68808185C851D0062D0CB /* Object */,
 				C7A6880D185C89BC0062D0CB /* CGPoint+Helper.h */,
 				C7A6880E185C89BC0062D0CB /* CGPoint+Helper.m */,
+				C7A652931875A74700D59413 /* CALayer+Extension.h */,
+				C7A652941875A74700D59413 /* CALayer+Extension.m */,
 				C7AD9FFB18588B4800EDC222 /* Supporting Files */,
 			);
 			path = Konker;
@@ -261,6 +266,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = wan;
 				TargetAttributes = {
+					C7AD9FF018588B4800EDC222 = {
+						DevelopmentTeam = FKF3UFB34N;
+					};
 					C7ADA01418588B4800EDC222 = {
 						TestTargetID = C7AD9FF018588B4800EDC222;
 					};
@@ -313,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7ADA00518588B4800EDC222 /* TTAppDelegate.m in Sources */,
+				C7A652951875A74700D59413 /* CALayer+Extension.m in Sources */,
 				C7A6880C185C882E0062D0CB /* TTPieceView.m in Sources */,
 				C7ADA02E18588CF800EDC222 /* TTBoardViewController.m in Sources */,
 				C7ADA03118588D4F00EDC222 /* TTBoardView.m in Sources */,
@@ -457,11 +466,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Konker/Konker-Prefix.pch";
 				INFOPLIST_FILE = "Konker/Konker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -471,11 +483,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Konker/Konker-Prefix.pch";
 				INFOPLIST_FILE = "Konker/Konker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

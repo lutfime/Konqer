@@ -14,6 +14,9 @@
 @property (nonatomic, readonly) CGPoint coordinate;
 @property (nonatomic, readonly) NSString *coordinateString;
 
+//!Used for sorting, used for distance. tempVal because can be used for any
+@property (nonatomic, assign) CGFloat tempVal;
+
 @property (nonatomic, assign) TTPlayer occupiedByPlayer;
 //!this coordinate is a konqere if it conquer other pieces
 @property (nonatomic, assign, getter = isKonqerer) BOOL konqerer;

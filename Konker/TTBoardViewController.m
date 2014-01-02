@@ -59,6 +59,10 @@
     [self.boardView connectLinesForCoordinates:coordinates forPlayer:playerIdx];
 }
 
+- (void)player:(TTPlayer)player testPieces:(NSArray *)coordinates{
+//    [self.boardView showTestCoordinates:coordinates duration:1];
+}
+
 #pragma mark - Board view delegate
 
 - (void)boardView:(TTBoardView *)boardView didEndTouchAtCoordinate:(CGPoint)coord
