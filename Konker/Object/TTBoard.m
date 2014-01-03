@@ -103,11 +103,12 @@ CGPoint CGPointAdd(CGPoint point1, CGPoint point2){
         //call delegate to tell pieces has become konqerer
         [self.delegate player:player piecesThatBecomeKonqerer:coordinateStrings];
         
-        [self.delegate player:player testPieces:coordinateStrings];
+        [self.delegate player:player testPieces:[shortestLoop valueForKey:@"coordinateString"]];
     }
     else{
         if ([self.delegate respondsToSelector:@selector(player:testPieces:)]) {
-            [self.delegate player:player testPieces:[copy valueForKey:@"coordinateString"]];
+            [self.delegate player:player testPieces:[shortestLoop valueForKey:@"coordinateString"]];
+            [self.delegate player:player testPieces2:[[copy valueForKey:@"coordinateString"] array]];
         }
     }
     
@@ -125,59 +126,10 @@ CGPoint CGPointAdd(CGPoint point1, CGPoint point2){
 }
 
 
-
+//!get  all connected line to given coordinate
 -(void)enumerateConnectedCoordinateFrom:(CGPoint)coordinate moveFrom:(TTCoordinateMove)moveFrom forPlayer:(TTPlayer)player{
     NSInteger availableMoveCount = 0;
-    
-//    NSOrderedSet *sortedCoordAttrs = [self sortedMoveIndexStringForInitialCoord:_initialCoordinate currentCoord:coordinate forPlayer:player];
-//    NSInteger sortedCoordAttrsCount = sortedCoordAttrs.count;
-//    
-//    
-//    CGPoint prevCoordinate = [self coordinate:coordinate withMove:[self reverseMove:moveFrom]];
-//    
-//    for (TTCoordinateAttribute *coordAttr in sortedCoordAttrs) {
-//        //if current move is going to previous coordinate, continue
-//        if (CGPointEqualToPoint(prevCoordinate, coordAttr.coordinate)) {
-//            continue;
-//        }
-//        TTCoordinateMove currentMove = [self moveForMoveFromCoordinate:coordinate toCoordinate:coordAttr.coordinate];
-//        
-//        if ([_currentEnumeratedConnectedCoordinates containsObject:coordAttr]) { //if in junction, dont add
-//            if (CGPointEqualToPoint(coordAttr.coordinate, _initialCoordinate)) {
-//                [self addToCurrentEnumeratedConnectedCoordinates:coordAttr];
-//                _foundKonqerLoop = YES;
-//                //                break;
-//            }
-//            continue;
-//        }
-//        
-//        if (coordAttr && ![coordAttr isCaptured]) {//can be added if only not captured
-//            availableMoveCount ++;
-//            if (availableMoveCount == 2) {
-//                [_junctions addObject:[self pieceForPlayer:player forCoordinate:coordinate withMove:0]];
-//            }
-//            
-//            CGPoint moveCoordinate = [self coordinate:coordinate withMove:currentMove];
-//            
-//            //if if next move is equal to initial coordinate, means that konquer occured, break the loop, no need search anymore
-//            if (CGPointEqualToPoint(moveCoordinate, _initialCoordinate)) {
-//                [self addToCurrentEnumeratedConnectedCoordinates:coordAttr];
-//                _foundKonqerLoop = YES;
-//                break;
-//            }
-//            
-//            //can only add and enumerate next if the piece is of current player and the attribute must not already added
-//            //            if (![_currentEnumeratedConnectedCoordinates containsObject:coordAttr]) {
-//            [self addToCurrentEnumeratedConnectedCoordinates:coordAttr];
-//            [self enumerateConnectedCoordinateFrom:moveCoordinate moveFrom:currentMove forPlayer:player];
-//            //            }
-//            //            else continue; //continue if coordAttr is not move made by given player
-//        }
-//
-//        
-//    }
-    
-    
+
     //total number of move is 8. Enumerate each of it to check connected coordinates.
     for (NSUInteger i=0; i<8; i++) {
         
@@ -187,43 +139,27 @@ CGPoint CGPointAdd(CGPoint point1, CGPoint point2){
         if (moveFrom == [self reverseMove:currentMove]) {
             continue;
         }
-        
-        //break if found konqer loop
-        if (_foundKonqerLoop) {
-            break;
-        }
-        
+
         TTCoordinateAttribute *coordAttr = [self pieceForPlayer:player forCoordinate:coordinate withMove:currentMove];
-        if ([_currentEnumeratedConnectedCoordinates containsObject:coordAttr]) { //if in junction, dont add
-            if (CGPointEqualToPoint(coordAttr.coordinate, _initialCoordinate)) {
-                [self addToCurrentEnumeratedConnectedCoordinates:coordAttr];
-                _foundKonqerLoop = YES;
-//                break;
-            }
-            continue;
-        }
         
         if (coordAttr && ![coordAttr isCaptured]) {//can be added if only not captured
+            if ([_currentEnumeratedConnectedCoordinates containsObject:coordAttr]) { //if in junction, dont add
+                if (CGPointEqualToPoint(coordAttr.coordinate, _initialCoordinate)) {
+                    [self addToCurrentEnumeratedConnectedCoordinates:coordAttr];
+                    _foundKonqerLoop = YES;
+                    //                break;
+                }
+                continue;
+            }
+            
             availableMoveCount ++;
             if (availableMoveCount == 2) {
                 [_junctions addObject:[self pieceForPlayer:player forCoordinate:coordinate withMove:0]];
             }
             
             CGPoint moveCoordinate = [self coordinate:coordinate withMove:currentMove];
-
-            //if if next move is equal to initial coordinate, means that konquer occured, break the loop, no need search anymore
-            if (CGPointEqualToPoint(moveCoordinate, _initialCoordinate)) {
-                [self addToCurrentEnumeratedConnectedCoordinates:coordAttr];
-                _foundKonqerLoop = YES;
-                break;
-            }
-
-            //can only add and enumerate next if the piece is of current player and the attribute must not already added
-//            if (![_currentEnumeratedConnectedCoordinates containsObject:coordAttr]) {
-                [self addToCurrentEnumeratedConnectedCoordinates:coordAttr];
-                [self enumerateConnectedCoordinateFrom:moveCoordinate moveFrom:currentMove forPlayer:player];
-//            }
-//            else continue; //continue if coordAttr is not move made by given player
+            [self addToCurrentEnumeratedConnectedCoordinates:coordAttr];
+            [self enumerateConnectedCoordinateFrom:moveCoordinate moveFrom:currentMove forPlayer:player];
         }
         
     }
@@ -272,12 +208,34 @@ CGPoint CGPointAdd(CGPoint point1, CGPoint point2){
     
     NSMutableArray *loop = [NSMutableArray array];
     __block CGFloat totalDistance = 0;
+    CGFloat MIN_DISTANCE = 4.8; //min distance for conquer
     
     void (^addToLoop)(TTCoordinateAttribute*) = ^(TTCoordinateAttribute *attr){
         [loop addObject:attr];
         totalDistance += attr.tempVal;
     };
     
+    
+    //Get initial attribute from give coords
+    NSInteger iniitalidx = [coordAttrs indexOfObjectWithOptions:NSEnumerationReverse passingTest:^BOOL(TTCoordinateAttribute *attr, NSUInteger idx, BOOL *stop) {
+        if (CGPointEqualToPoint(initial, attr.coordinate)) {
+            return YES;
+        }
+        return NO;
+    }];
+    
+    //if not found initial in coords return
+    if (iniitalidx == NSNotFound) {
+        return nil;
+    }
+    
+    
+    
+    TTCoordinateAttribute *initialAttr  = coordAttrs[iniitalidx];
+    [coordAttrs removeObjectAtIndex:iniitalidx];
+    addToLoop(initialAttr);
+    
+    //calc distance to initial
     for (TTCoordinateAttribute *coordAttr in coordAttrs) {
         coordAttr.tempVal = CGPointDistance(initial, coordAttr.coordinate);
     }
@@ -293,12 +251,10 @@ CGPoint CGPointAdd(CGPoint point1, CGPoint point2){
         return (NSComparisonResult)NSOrderedSame;
     }];
     
-    TTCoordinateAttribute *currentCoordAttr = coordAttrs[0];
-    [loop addObject:currentCoordAttr];
-    [coordAttrs removeObjectAtIndex:0];
-    
+    TTCoordinateAttribute *currentCoordAttr = initialAttr;
+
     _foundKonqerLoop = NO;
-    
+
     NSInteger attrsCount = coordAttrs.count;
     while (attrsCount > 0) {
         for (NSUInteger i=0; i<attrsCount; i++) {
@@ -312,13 +268,22 @@ CGPoint CGPointAdd(CGPoint point1, CGPoint point2){
             
             //found no loop, just stop
             if (i == attrsCount -1) {
-                [coordAttrs removeAllObjects];
+                //remove bad not connected coord
+                [coordAttrs removeObject:currentCoordAttr];
+                [loop removeLastObject];
+                
+                if (currentCoordAttr == loop.lastObject) {
+                    [coordAttrs removeAllObjects];
+                }
+                else
+                    currentCoordAttr = [loop lastObject]; // make previous coord as current and check again. This time bad coord is already removed
+                break;
             }
         }
         
         //if found loop break
         TTCoordinateMove move = [self moveForMoveFromCoordinate:currentCoordAttr.coordinate toCoordinate:initial];
-        if (move != kMoveNone && loop.count > 3 && totalDistance > 4.8) {
+        if (move != kMoveNone && loop.count > 3 && totalDistance > MIN_DISTANCE) {
             
             //beside ref can only one has been konqerer for new loop
             if ((currentCoordAttr.isKonqerer && ![loop[0] isKonqerer]) || (!currentCoordAttr.isKonqerer && [loop[0] isKonqerer]) || (!currentCoordAttr.isKonqerer && ![loop[0] isKonqerer])) {
@@ -331,7 +296,7 @@ CGPoint CGPointAdd(CGPoint point1, CGPoint point2){
     }
     
     
-    if (totalDistance > 4.8) {
+    if (totalDistance > MIN_DISTANCE) {
         return loop;
     }
     return nil;

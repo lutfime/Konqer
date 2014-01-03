@@ -27,6 +27,7 @@
 
 //!testing
 - (void)showTestCoordinates:(NSArray*)coordinates duration:(NSTimeInterval)duration;
+- (void)animateTestCoordinates:(NSArray*)coordinates duration:(NSTimeInterval)duration;
 @end
 
 @protocol TTBoardViewDelegate <NSObject>

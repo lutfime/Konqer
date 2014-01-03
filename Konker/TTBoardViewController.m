@@ -15,7 +15,11 @@
 
 @end
 
-@implementation TTBoardViewController
+@implementation TTBoardViewController{
+    NSArray *_lastTestCoordinates;
+    NSArray *_lastTestCoordinates2;
+    BOOL debug;
+}
 
 #pragma mark Life
 
@@ -36,6 +40,9 @@
     
     self.board.delegate = self;
     self.boardView.delegate = self;
+    
+    debug = NO;
+    
 	// Do any additional setup after loading the view.
 }
 
@@ -60,7 +67,16 @@
 }
 
 - (void)player:(TTPlayer)player testPieces:(NSArray *)coordinates{
+    if (debug) {
+        [self.boardView showTestCoordinates:coordinates duration:1];
+    }
+    
+    _lastTestCoordinates = coordinates;
+}
+
+- (void)player:(TTPlayer)player testPieces2:(NSArray *)coordinates{
 //    [self.boardView showTestCoordinates:coordinates duration:1];
+    _lastTestCoordinates2 = coordinates;
 }
 
 #pragma mark - Board view delegate
@@ -69,5 +85,19 @@
 {
     [self.board handleTouchAtCoordinate:coord];
 }
+
+#pragma mark -Testing
+
+- (IBAction)checkLastCoordinates:(id)sender {
+    [self.boardView animateTestCoordinates:_lastTestCoordinates duration:5];
+}
+
+- (IBAction)checkLastCoordinates2:(id)sender {
+    [self.boardView animateTestCoordinates:_lastTestCoordinates2 duration:7];
+
+}
+
+
+
 
 @end

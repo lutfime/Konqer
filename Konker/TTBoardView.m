@@ -285,6 +285,15 @@
 
 #pragma mark - Testing
 
+- (CALayer*)createTestLayerAtPoint:(CGPoint)p{
+    CALayer *layer = [CALayer layer];
+    layer.frame = CGRectMake(0, 0, 10, 10);
+    layer.backgroundColor = [UIColor blackColor].CGColor;
+    layer.position = p;
+    layer.name = @"testLayer";
+    return layer;
+}
+
 - (void)showTestCoordinates:(NSArray*)coordinates duration:(NSTimeInterval)duration{
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     
@@ -293,14 +302,34 @@
     [coordinates enumerateObjectsUsingBlock:^(NSString* coordinateString, NSUInteger idx, BOOL *stop) {
         //        NSLog(@"%@", coordinateString);
         CGPoint pointInView = [self viewPointForCoordinate:CGPointFromString(coordinateString)];
-        CALayer *layer = [CALayer layer];
-        layer.frame = CGRectMake(0, 0, 10, 10);
-        layer.backgroundColor = [UIColor blackColor].CGColor;
-        layer.position = pointInView;
-        layer.name = @"testLayer";
+        CALayer *layer = [weakSelf createTestLayerAtPoint:pointInView];
         [weakSelf.layer addSublayer:layer];
         
     }];
+    
+    [self performSelector:@selector(removeTestLayers) withObject:nil afterDelay:duration];
+}
+
+- (void)animateTestCoordinates:(NSArray*)coordinates duration:(NSTimeInterval)duration{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    
+    NSTimeInterval pieceAnimateDelay = duration/(CGFloat)coordinates.count;
+    NSTimeInterval delayInSeconds = 0;
+    
+    for (NSString *coordinateString in coordinates) {
+        CGPoint pointInView = [self viewPointForCoordinate:CGPointFromString(coordinateString)];
+        CALayer *layer = [self createTestLayerAtPoint:pointInView];
+        layer.hidden = YES;
+        [self.layer addSublayer:layer];
+        
+        delayInSeconds += pieceAnimateDelay;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            layer.hidden = NO;
+        });
+        
+    }
+
     
     [self performSelector:@selector(removeTestLayers) withObject:nil afterDelay:duration];
 }

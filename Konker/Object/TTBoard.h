@@ -28,6 +28,7 @@ typedef enum
 - (void)player:(TTPlayer)player piecesThatBecomeKonqerer:(NSArray*)coordinates;
 
 - (void)player:(TTPlayer)player testPieces:(NSArray*)coordinates;
+- (void)player:(TTPlayer)player testPieces2:(NSArray*)coordinates;
 
 @end
 
